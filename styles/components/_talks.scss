@@ -1,0 +1,7 @@
+#talks {
+    .content {
+        ul {
+            @extend %squareList;
+        }
+    }
+}

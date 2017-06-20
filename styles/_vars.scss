@@ -1,0 +1,20 @@
+﻿$color-offblack: #292B3A;
+$color-grey: #757968;
+$color-greyli: rgba($color-grey, 0.5);
+$color-ink: #3A3748;
+$color-green: #AFD661;
+$color-greenli: #D8F05E;
+$color-print1: #595A5D;
+$color-print2: #787A7E;
+$color-print3: #A2A5A8;
+$color-print4: #CBCFD3;
+// Functional colors
+$color-border: $color-greyli;
+$font-heading: 'Unica One',
+sans-serif;
+$font-base: 'Rubik',
+sans-serif;
+%squareList {
+    list-style: square;
+    padding-left: 24px;
+}

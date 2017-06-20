@@ -1,0 +1,13 @@
+.summary {
+    border-bottom: 1px solid $color-border;
+    margin-top: 30px;
+    padding-bottom: 18px;
+    @media only screen and (min-width: 540px) {
+        margin-top: 42px;
+        padding-bottom: 30px;
+    }
+    @media only screen and (min-width: 800px) {
+        margin-top: 60px;
+        padding-bottom: 60px;
+    }
+}

@@ -1,0 +1,20 @@
+.techList {
+    &:before {
+        content: 'Technologies: ';
+        font-weight: 600;
+    }
+    >li {
+        display: inline-block;
+        margin: 0 0 3px;
+        &:not(:last-child):after {
+            content: ', ';
+        }
+    }
+    @media only screen and (max-width: 639px) {
+        border-left: 3px solid;
+        padding-left: 6px;
+    }
+    @media only screen and (min-width:480px) and (max-width: 639px) {
+        padding-left: 12px;
+    }
+}

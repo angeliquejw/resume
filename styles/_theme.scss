@@ -1,0 +1,133 @@
+body {
+    color: $color-offblack;
+    @media print {
+        color: black;
+    }
+}
+
+a {
+    color: $color-ink;
+    @media screen {
+        section & {
+            border-bottom-color: $color-greenli;
+        }
+    }
+    @media print {
+        color: $color-offblack;
+    }
+}
+
+.subheading {
+    .skillList &,
+    aside & {
+        @media screen {
+            color: $color-grey;
+        }
+        @media print {
+            color: $color-print2;
+        }
+    }
+}
+
+.docHeader {
+    background: $color-offblack;
+    .heading {
+        color: white;
+    }
+    .subheading {
+        color: rgba(white, 0.75);
+    }
+    a,
+    li:before {
+        color: rgba(white, 0.75);
+    }
+    a {
+        @include hover-state {
+            color: $color-greenli;
+        }
+    }
+    @media print {
+        background: $color-print1;
+        .subheading,
+        a,
+        li:before,
+        li:after {
+            color: white;
+        }
+    }
+}
+
+nav {
+    border-top-color: $color-green;
+    a {
+        &:before {
+            background: $color-green;
+        }
+        &:hover {
+            color: white;
+            span {
+                &:after {
+                    color: $color-ink;
+                }
+            }
+        }
+    }
+    &.isSticky {
+        background: $color-ink;
+        a {
+            color: white;
+            &:hover {
+                span {
+                    &:after {
+                        color: $color-ink;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section {
+    a {
+        @include hover-state {
+            background: $color-greenli;
+            color: $color-ink;
+        }
+    }
+}
+
+#work {
+    header {
+        .heading {
+            @media screen {
+                color: $color-ink;
+            }
+        }
+        .timespan {
+            color: $color-grey;
+            @media print {
+                color: $color-print2;
+            }
+        }
+    }
+    .content {
+        >li {
+            .content {
+                &:before {
+                    @media only screen and (min-width: 640px) {
+                        background: $color-greenli;
+                    }
+                    @media print {
+                        background: $color-print1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.techList {
+    @media screen {
+        border-left-color: $color-greenli;
+    }
+}

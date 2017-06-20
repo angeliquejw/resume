@@ -1,0 +1,106 @@
+nav {
+    border-top: 3px solid;
+    @media only screen and (max-width: 419px) {
+        margin: 0 0 0 -12px;
+        padding: 0 3px;
+        width: calc(100% + 24px);
+    }
+    &.isSticky {
+        @media only screen and (min-width: 420px) {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    ul {
+        @include display(flex);
+        @include justify-content(space-between);
+        margin: 0;
+    }
+    li,
+    a {
+        @include display(flex);
+    }
+    li,
+    a,
+    span {
+        @include flex(1 0 auto);
+    }
+    li {
+        height: 55px;
+        margin: 0!important;
+        position: relative;
+        word-break: break-word;
+        span {
+            @include align-self(center);
+        }
+    }
+    a {
+        padding-bottom: 6px;
+        position: relative;
+        text-align: center;
+        @include transform(perspective(1px) translateZ(0));
+        @include transition-property(color);
+        @include transition-duration(0.3s);
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            @include transform(scaleY(0));
+            @include transform-origin(50% 0);
+            @include transition-property(transform);
+            @include transition-duration(0.3s);
+            @include transition-timing-function(ease-out);
+        }
+        @include hover-state {
+            &:before {
+                @include transform(scaleY(1));
+            }
+        }
+        @media only screen and (min-width: 500px) {
+            padding-top: 9px;
+            padding-bottom: 12px;
+        }
+        @media only screen and (min-width: 800px) {
+            padding-bottom: 18px;
+        }
+    }
+    span {
+        font-family: $font-heading;
+        @include rem(font-size, 30px);
+        overflow-wrap: break-word;
+        &:after {
+            content: attr(data-short);
+            display: block;
+            font-family: $font-base;
+            @include rem(font-size, 13px);
+        }
+        @media (min-width: 500px) {
+            &:after {
+                content: attr(data-mid);
+            }
+            &[data-mid=""] {
+                &:after {
+                    content: attr(data-short);
+                }
+            }
+        }
+        @media (min-width: 800px) {
+            &:after {
+                content: attr(data-long);
+            }
+            &[data-long=""] {
+                &:after {
+                    content: attr(data-mid);
+                }
+            }
+            &[data-mid=""] {
+                &:after {
+                    content: attr(data-short);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.heading {
+    font-family: $font-heading;
+    .docHeader & {
+        @include rem(font-size, 54px);
+        max-width: 9ch;
+        @media only screen and (min-width: 380px) {
+            @include rem(font-size, 60px);
+        }
+        @media only screen and (min-width: 800px) {
+            @include rem(font-size, 72px);
+        }
+    }
+    section>& {
+        @include rem(font-size, 30px);
+        margin: 18px 0 12px;
+        @media only screen and (min-width: 540px) {
+            @include rem(font-size, 36px);
+            margin: 24px 0 18px;
+        }
+        @media only screen and (min-width: 800px) {
+            @include rem(font-size, 42px);
+        }
+    }
+    #work header & {
+        @include rem(font-size, 24px);
+        font-weight: 600;
+    }
+}

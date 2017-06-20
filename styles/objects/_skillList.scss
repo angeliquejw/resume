@@ -1,0 +1,28 @@
+.skillList {
+    ul {
+        @extend %squareList;
+    }
+    @media only screen and (max-width: 399px) {
+        >li {
+            +li {
+                margin-top: 12px;
+            }
+        }
+    }
+    @media only screen and (min-width: 400px),
+    print {
+        @include align-items(flex-start);
+        @include display(flex);
+        @include justify-content(space-between);
+    }
+    @media only screen and (min-width: 400px) and (max-width:499px) {
+        @include flex-wrap(wrap);
+    }
+    @media only screen and (min-width:500px),
+    print {
+        >li {
+            margin-top: 0;
+            width: 33%;
+        }
+    }
+}

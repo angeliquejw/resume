@@ -1,0 +1,23 @@
+.subheading {
+    .docHeader & {
+        font-family: $font-heading;
+        @include rem(font-size, 24px);
+        @media only screen and (min-width: 800px) {
+            @include rem(font-size, 32px);
+        }
+    }
+    .skillList &,
+    aside & {
+        color: $color-grey;
+        display: block;
+        @include rem(font-size, 13px);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    @media only screen {
+        aside & {
+            border-top: 1px solid $color-border;
+            padding-top: 30px;
+        }
+    }
+}

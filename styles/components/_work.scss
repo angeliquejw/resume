@@ -1,0 +1,66 @@
+#work {
+    .timespan {
+        margin-top: 6px;
+    }
+    @media only screen and (max-width: 639px),
+    print {
+        header {
+            margin-bottom: 6px;
+            .heading {
+                display: inline;
+                +.heading {
+                    &:before {
+                        content: '\2022';
+                        padding: 0 6px 0 3px;
+                    }
+                }
+            }
+        }
+        .content {
+            >li {
+                +li {
+                    margin-top: 24px;
+                }
+            }
+        }
+    }
+    @media only screen and (min-width:640px) {
+        .content {
+            >li {
+                @include display(flex);
+                margin: 0;
+                header {
+                    width: 30%;
+                    .heading {
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                        &:not(:first-child) {
+                            @include rem(font-size, 20px);
+                        }
+                    }
+                }
+                .content {
+                    border-left: 1px solid $color-border;
+                    margin-left: 18px;
+                    padding-bottom: 30px;
+                    padding-left: 30px;
+                    position: relative;
+                    width: 70%;
+                    &:before {
+                        $dotSize: 18px;
+                        border-radius: 50%;
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: - $dotSize/2;
+                        @include size($dotSize);
+                    }
+                    .techList {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

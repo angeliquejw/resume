@@ -1,0 +1,14 @@
+.linkList {
+    @media screen {
+        text-align: center;
+        >li {
+            display: inline-block;
+            +li {
+                &:before {
+                    content: '\2022';
+                    padding: 0 6px 0 3px;
+                }
+            }
+        }
+    }
+}
